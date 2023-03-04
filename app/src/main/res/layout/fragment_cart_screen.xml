@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.cart.CartScreen"
+    android:background="@color/background_color">
+
+    <include
+        android:id="@+id/cartToolbar"
+        layout="@layout/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/cartRecyclerView"
+        />
+
+    <TextView
+        android:id="@+id/cartToolbarTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cart"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginStart="52dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/cartToolbar"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cartRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/cartToolbar"
+        app:layout_constraintBottom_toTopOf="@id/cartTotalAmountTitle"
+        android:layout_marginBottom="16dp"
+        />
+
+    <TextView
+        android:id="@+id/cartTotalAmountTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total_amount"
+        android:textSize="20sp"
+        android:textColor="@color/dim_gray"
+        app:layout_constraintEnd_toStartOf="@id/cartPriceTextView"
+        app:layout_constraintBottom_toTopOf="@id/cartBuyButton"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="28dp"
+        />
+
+    <TextView
+        android:id="@+id/cartPriceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/price"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/cartBuyButton"
+        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="30dp"
+        />
+
+    <Button
+        android:id="@+id/cartBuyButton"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="@string/buy"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/button_shape"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.tugcearas.goshop.ui.splash.SplashScreen"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreen_to_homeScreen"
+            app:destination="@id/homeScreen"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewPagerFragment"
+        android:name="com.tugcearas.goshop.ui.onboarding.ViewPagerFragment"
+        android:label="fragment_view_pager"
+        tools:layout="@layout/fragment_view_pager" >
+        <action
+            android:id="@+id/action_viewPagerFragment_to_homeScreen"
+            app:destination="@id/homeScreen"
+            app:popUpTo="@id/viewPagerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="com.tugcearas.goshop.ui.home.HomeScreen"
+        android:label="fragment_home_screen"
+        tools:layout="@layout/fragment_home_screen" >
+        <action
+            android:id="@+id/action_homeScreen_to_productsScreen"
+            app:destination="@id/productsScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailScreen"
+        android:name="com.tugcearas.goshop.ui.detail.DetailScreen"
+        android:label="fragment_detail_screen"
+        tools:layout="@layout/fragment_detail_screen" >
+        <action
+            android:id="@+id/action_detailScreen_to_cartScreen"
+            app:destination="@id/cartScreen"
+            />
+        <action
+            android:id="@+id/action_detailScreen_to_favoriteScreen"
+            app:destination="@id/favoriteScreen"
+            app:popUpTo="@id/detailScreen"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="product"
+            app:argType="com.tugcearas.goshop.data.model.ProductResponseModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/productsScreen"
+        android:name="com.tugcearas.goshop.ui.products.ProductsScreen"
+        android:label="fragment_products_screen"
+        tools:layout="@layout/fragment_products_screen" >
+        <action
+            android:id="@+id/action_productsScreen_to_detailScreen"
+            app:destination="@id/detailScreen" />
+        <argument
+            android:name="category"
+            app:argType="string"
+            android:defaultValue="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartScreen"
+        android:name="com.tugcearas.goshop.ui.cart.CartScreen"
+        android:label="fragment_cart_screen"
+        tools:layout="@layout/fragment_cart_screen" >
+        <action
+            android:id="@+id/action_cartScreen_to_paymentScreen"
+            app:destination="@id/paymentScreen" />
+        <action
+            android:id="@+id/action_cartScreen_to_homeScreen"
+            app:destination="@id/homeScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteScreen"
+        android:name="com.tugcearas.goshop.ui.favorite.FavoriteScreen"
+        android:label="fragment_favorite_screen"
+        tools:layout="@layout/fragment_favorite_screen" />
+    <fragment
+        android:id="@+id/paymentScreen"
+        android:name="com.tugcearas.goshop.ui.payment.PaymentScreen"
+        android:label="fragment_payment_screen"
+        tools:layout="@layout/fragment_payment_screen" >
+        <action
+            android:id="@+id/action_paymentScreen_to_successScreen"
+            app:destination="@id/successScreen"
+          />
+    </fragment>
+    <fragment
+        android:id="@+id/profileScreen"
+        android:name="com.tugcearas.goshop.ui.profile.ProfileScreen"
+        android:label="fragment_profile_screen"
+        tools:layout="@layout/fragment_profile_screen" />
+    <fragment
+        android:id="@+id/successScreen"
+        android:name="com.tugcearas.goshop.ui.payment.success.SuccessScreen"
+        android:label="fragment_success_screen"
+        tools:layout="@layout/fragment_success_screen" >
+        <action
+            android:id="@+id/action_successScreen_to_homeScreen"
+            app:destination="@id/homeScreen"
+            app:popUpTo="@id/successScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

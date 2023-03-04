@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/productsCardView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="22dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardElevation="8dp"
+    app:contentPadding="16dp"
+    app:cardCornerRadius="20dp"
+    android:background="@drawable/home_item_shape"
+    app:cardBackgroundColor="@color/item_background_color"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:id="@+id/insideContraintLayout"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+           <ImageView
+               android:id="@+id/productsItemImageView"
+               android:layout_width="120dp"
+               android:layout_height="100dp"
+               android:scaleType="fitCenter"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               />
+
+           <TextView
+               android:id="@+id/productsItemTitle"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:text="@string/product_title"
+               android:textSize="15sp"
+               android:textColor="@color/black"
+               android:textStyle="bold"
+               android:maxLines="1"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/productsItemImageView"
+               android:layout_marginTop="14dp"
+               />
+
+           <TextView
+               android:id="@+id/productsItemPrice"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:text="@string/price"
+               android:textSize="13sp"
+               android:textColor="@color/black"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/productsItemTitle"
+               android:layout_marginTop="5dp"
+               />
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
