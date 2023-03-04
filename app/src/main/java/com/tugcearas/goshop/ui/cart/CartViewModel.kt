@@ -1,11 +1,10 @@
-package com.tugcearas.goshop.ui.cart.adapter
+package com.tugcearas.goshop.ui.cart
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tugcearas.goshop.data.model.CartModel
 import com.tugcearas.goshop.data.repository.ProductsRepo
-import com.tugcearas.goshop.data.source.local.ProductDao
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

@@ -11,7 +11,6 @@ import androidx.navigation.fragment.findNavController
 import com.tugcearas.goshop.R
 import com.tugcearas.goshop.databinding.FragmentCartScreenBinding
 import com.tugcearas.goshop.ui.cart.adapter.CartAdapter
-import com.tugcearas.goshop.ui.cart.adapter.CartViewModel
 import com.tugcearas.goshop.util.extensions.click
 import com.tugcearas.goshop.util.extensions.gone
 import com.tugcearas.goshop.util.extensions.toastMessage
